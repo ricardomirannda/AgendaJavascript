@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Telefônica</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <script src="assets/js/scripts.js"></script>
+</head>
+<body>
+<div class="col-md-4 col-sm-3"><!-- EMPURRA PARA CENTRALIZAR A DIV --></div>
+
+  <div class="col-md-4 col-sm-6" >
+    <div class="jumbotron">
+      <h3 class="text-center">Lista Telefônica</h3>
+
+      <!-- INICIO DA TABELA -->
+      <div class="container">
+        <table class="table" id="tabelaContatos">
+          <!-- CABECALHO -->
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <!-- <th>Operadora</th> -->
+            </tr>
+          </thead>
+
+          <!-- CORPO -->
+          <tbody>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+          </tbody>
+
+        </table>
+      </div>
+      <hr>
+
+      <!-- ADICIONAR NOME, TELEFONE E OPERADORA -->
+      <div class="container">
+          <form name="contatoForm" id="contatoForm">
+
+            <div class="messageUser">
+                <p>Preencha os campos: </p>
+            </div>
+
+            <label>Nome</label>
+            <input class="form-control" type="text" name="Nome" id="nomeUsuarioInput"><br>
+
+            <label>Telefone</label>
+            <input class="form-control" type="text" name="Telefone" id="telefoneUsuarioInput"><br>
+
+            <!-- <select class="form-control">
+              <option value="">Selecione uma operadora</option>
+              <option value="">Oi</option>
+              <option value="">Tim</option>
+              <option value="">Vivo</option>
+            </select> -->
+          </form><br>
+
+          <div class="text-center">
+            <button class="btn btn-primary" onclick='adicionarDados()'>Adicionar</button>
+            <button class="btn btn-danger">Apagar</button>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-3"><!-- EMPURRA PARA CENTRALIZAR A DIV --></div>
+
+
+</body>
+</html>
