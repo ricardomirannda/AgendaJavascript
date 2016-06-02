@@ -13,7 +13,7 @@ function adicionarDados(){
 
    for(var i=0; i<contatoForm.elements.length; i++)
 	 {
-       if(contatoForm.elements[i].value.length == 0)
+       if(contatoForm.elements[i].value === "")
 			 {
 				 alert ('Preencha o campo ' + contatoForm.elements[i].name);
 				//  document.querySelector("#contatoForm .messageUser p").style.display="block";;
@@ -28,26 +28,28 @@ function adicionarDados(){
 
 
 
-	 // LIMPA OS CAMPOS, APOS OS DADOS SEREM INSERIDOS, REMOVE AS BORDAS e INSERE FOCO NO NOME
+	 // LIMPA OS CAMPOS, APOS OS DADOS SEREM INSERIDOS  e  AJUSTA O FOCO NO NOME
+		if (nomeUsuario === "")
+		{
+			document.getElementById("nomeUsuarioInput").focus();
+			document.getElementById("nomeUsuarioInput").value = "";
 
-	if (nomeUsuario === "")
-	{
-		document.getElementById("nomeUsuarioInput").focus();
-		document.getElementById("nomeUsuarioInput").value = "";
-
-		return false
-	}
-
+			return false
+		}
 
 
-	if (telefoneUsuario === "")
-	{
-		document.getElementById("telefoneUsuarioInput").focus();
-		document.getElementById("telefoneUsuarioInput").value = "";
-		return false
- 	}
+
+		if (telefoneUsuario === "")
+		{
+			document.getElementById("telefoneUsuarioInput").focus();
+			document.getElementById("telefoneUsuarioInput").value = "";
+			return false
+	 	}
 
 
+
+
+	document.contatoForm.reset();
 
 
 	// CRIACAO AUTOMATICA DAS ROWS
