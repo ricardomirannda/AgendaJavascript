@@ -6761,8 +6761,8 @@ button.close {
 
 
 /* MENSAGENS PARA O USUARIO */
-
 .messageUser p{
       color:red;
-      display: none
+      display: none;
+      font-size: 16px
 }
