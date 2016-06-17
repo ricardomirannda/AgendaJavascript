@@ -8,6 +8,9 @@ function adicionarDados()
 		// PEGA O TELEFONE DO USUARIO
 		var telefoneUsuario = document.getElementById('telefoneUsuarioInput').value;
 
+		// PEGA A OPERADORA DO USUARIO
+		var operadoraUsuario = document.getElementById('operadoraUsuarioSelect').value;
+
 	  var mensagemErro = "";
 
 
@@ -19,7 +22,7 @@ function adicionarDados()
 		       if(contatoForm.elements[i].value === "")
 					 {
 						  document.querySelector("#contatoForm .messageUser p").style.display="block";
-							mensagemErro += contatoForm.elements[i].name + " <br> ";
+							mensagemErro += contatoForm.elements[i].name + "<br>";
 							contatoForm.elements[i].style.border="solid 1px red";
 		       }
 
@@ -54,6 +57,15 @@ function adicionarDados()
 	 	}
 
 
+		if (operadoraUsuario === "")
+		{
+			document.getElementById("operadoraUsuarioSelect").focus();
+			document.getElementById("operadoraUsuarioSelect").value = "";
+			return false
+	 	}
+
+
+
 		// CRIACAO AUTOMATICA DAS ROWS e CHECKBOX
 		function criaRowsAndCheck()
 		{
@@ -62,8 +74,10 @@ function adicionarDados()
 			var colunaCheckBox = row.insertCell(0);
 			var colunaNome = row.insertCell(1);
 			var colunaTelefone = row.insertCell(2);
+			var colunaOperadora = row.insertCell(3);
 			colunaNome.innerHTML = nomeUsuario;
 			colunaTelefone.innerHTML = telefoneUsuario;
+			colunaOperadora.innerHTML = operadoraUsuario;
 
 
 			// CRIACAO AUTOMATICA DO CHECKBOX - SOLUCAO  1
@@ -71,7 +85,6 @@ function adicionarDados()
 			createCheckbox.setAttribute("type", "checkbox");
 			colunaCheckBox.appendChild(createCheckbox);
 		}
-
 		criaRowsAndCheck()
 
 
@@ -81,9 +94,11 @@ function adicionarDados()
 		// document.querySelector("#tabelaContatos tr > td").appendChild(createCheckbox);
 
 
+
 		// LIMPA OS CAMPOS APOS O SUBMIT
 		document.contatoForm.reset();
 }
+
 
 
 
